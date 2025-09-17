@@ -1,0 +1,10 @@
+html{scroll-behavior:smooth;}
+body{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+.site-header{position:sticky; top:0; z-index:50; background:var(--wp--preset--color--bg); border-bottom:1px solid #eaeef3;}
+.site-footer{border-top:1px solid #eaeef3;}
+.logo-row{display:flex; gap:24px; align-items:center; flex-wrap:wrap; opacity:.85}
+.section-pad{padding-block:clamp(40px,6vw,96px);}
+.hero{padding-block:clamp(72px,10vw,144px);}
+.btn-primary{background:var(--wp--preset--color--primary); color:#fff; border-radius:var(--radius-md); padding:.75rem 1rem; display:inline-block; text-decoration:none;}
+.btn-ghost{border:1px solid #cfd6df; border-radius:var(--radius-md); padding:.65rem 1rem; display:inline-block;}
+
