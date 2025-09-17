@@ -1,0 +1,10 @@
+Page,URL,Title,Content Type,Word Count,Images,Last Updated,Status,Notes
+Home,/,Homepage,Landing,500,5,[DATE],Draft,Main value proposition and CTA
+About,/about/,About Us,Informational,800,3,[DATE],Draft,Company story and team
+Services,/services/,Our Services,Service,1200,8,[DATE],Draft,Service descriptions and pricing
+Contact,/contact/,Contact Us,Contact,300,2,[DATE],Draft,Contact form and information
+Blog,/blog/,Blog,Content,0,0,[DATE],Planned,Optional content section
+Privacy Policy,/privacy/,Privacy Policy,Legal,1500,0,[DATE],Draft,GDPR compliance
+Terms of Service,/terms/,Terms of Service,Legal,1000,0,[DATE],Draft,Legal terms
+404 Error,/404/,Page Not Found,Error,100,1,[DATE],Draft,Error page
+Search Results,/search/,Search Results,Functional,200,0,[DATE],Draft,Search functionality

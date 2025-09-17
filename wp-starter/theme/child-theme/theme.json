@@ -1,0 +1,479 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "title": "{{CLIENT_TITLE}} - Kagemann Creatives Starter",
+  "description": "A production-ready WordPress block theme for {{CLIENT_NAME}}. Built by Kagemann Creatives with performance, security, and compliance in mind.",
+  "settings": {
+    "appearanceTools": true,
+    "useRootPaddingAwareAlignments": true,
+    "layout": {
+      "contentSize": "800px",
+      "wideSize": "1200px"
+    },
+    "color": {
+      "palette": [
+        {
+          "slug": "primary",
+          "color": "#007cba",
+          "name": "Primary"
+        },
+        {
+          "slug": "secondary",
+          "color": "#6c757d",
+          "name": "Secondary"
+        },
+        {
+          "slug": "accent",
+          "color": "#28a745",
+          "name": "Accent"
+        },
+        {
+          "slug": "background",
+          "color": "#ffffff",
+          "name": "Background"
+        },
+        {
+          "slug": "foreground",
+          "color": "#212529",
+          "name": "Foreground"
+        },
+        {
+          "slug": "light-gray",
+          "color": "#f8f9fa",
+          "name": "Light Gray"
+        },
+        {
+          "slug": "dark-gray",
+          "color": "#6c757d",
+          "name": "Dark Gray"
+        },
+        {
+          "slug": "success",
+          "color": "#28a745",
+          "name": "Success"
+        },
+        {
+          "slug": "warning",
+          "color": "#ffc107",
+          "name": "Warning"
+        },
+        {
+          "slug": "danger",
+          "color": "#dc3545",
+          "name": "Danger"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
+          "name": "System Font",
+          "slug": "system-font"
+        },
+        {
+          "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "name": "Inter",
+          "slug": "inter"
+        },
+        {
+          "fontFamily": "'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+          "name": "Roboto",
+          "slug": "roboto"
+        },
+        {
+          "fontFamily": "'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+          "name": "Open Sans",
+          "slug": "open-sans"
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "small",
+          "size": "0.875rem",
+          "name": "Small"
+        },
+        {
+          "slug": "medium",
+          "size": "1rem",
+          "name": "Medium"
+        },
+        {
+          "slug": "large",
+          "size": "1.25rem",
+          "name": "Large"
+        },
+        {
+          "slug": "x-large",
+          "size": "1.5rem",
+          "name": "Extra Large"
+        },
+        {
+          "slug": "xx-large",
+          "size": "2rem",
+          "name": "2X Large"
+        },
+        {
+          "slug": "xxx-large",
+          "size": "2.5rem",
+          "name": "3X Large"
+        }
+      ],
+      "fontWeights": [
+        {
+          "slug": "light",
+          "weight": "300",
+          "name": "Light"
+        },
+        {
+          "slug": "normal",
+          "weight": "400",
+          "name": "Normal"
+        },
+        {
+          "slug": "medium",
+          "weight": "500",
+          "name": "Medium"
+        },
+        {
+          "slug": "semibold",
+          "weight": "600",
+          "name": "Semibold"
+        },
+        {
+          "slug": "bold",
+          "weight": "700",
+          "name": "Bold"
+        }
+      ],
+      "lineHeights": [
+        {
+          "slug": "tight",
+          "lineHeight": "1.2",
+          "name": "Tight"
+        },
+        {
+          "slug": "normal",
+          "lineHeight": "1.5",
+          "name": "Normal"
+        },
+        {
+          "slug": "relaxed",
+          "lineHeight": "1.75",
+          "name": "Relaxed"
+        }
+      ]
+    },
+    "spacing": {
+      "spacingScale": {
+        "steps": 0
+      },
+      "spacingSizes": [
+        {
+          "slug": "20",
+          "size": "0.5rem",
+          "name": "0.5"
+        },
+        {
+          "slug": "30",
+          "size": "0.75rem",
+          "name": "0.75"
+        },
+        {
+          "slug": "40",
+          "size": "1rem",
+          "name": "1"
+        },
+        {
+          "slug": "50",
+          "size": "1.25rem",
+          "name": "1.25"
+        },
+        {
+          "slug": "60",
+          "size": "1.5rem",
+          "name": "1.5"
+        },
+        {
+          "slug": "70",
+          "size": "1.75rem",
+          "name": "1.75"
+        },
+        {
+          "slug": "80",
+          "size": "2rem",
+          "name": "2"
+        },
+        {
+          "slug": "100",
+          "size": "2.5rem",
+          "name": "2.5"
+        },
+        {
+          "slug": "120",
+          "size": "3rem",
+          "name": "3"
+        },
+        {
+          "slug": "160",
+          "size": "4rem",
+          "name": "4"
+        },
+        {
+          "slug": "200",
+          "size": "5rem",
+          "name": "5"
+        },
+        {
+          "slug": "240",
+          "size": "6rem",
+          "name": "6"
+        }
+      ]
+    },
+    "border": {
+      "radius": [
+        {
+          "slug": "none",
+          "value": "0px",
+          "name": "None"
+        },
+        {
+          "slug": "small",
+          "value": "4px",
+          "name": "Small"
+        },
+        {
+          "slug": "medium",
+          "value": "8px",
+          "name": "Medium"
+        },
+        {
+          "slug": "large",
+          "value": "16px",
+          "name": "Large"
+        },
+        {
+          "slug": "round",
+          "value": "9999px",
+          "name": "Round"
+        }
+      ]
+    },
+    "shadow": {
+      "presets": [
+        {
+          "slug": "natural",
+          "shadow": "6px 6px 9px rgba(0, 0, 0, 0.2)"
+        },
+        {
+          "slug": "deep",
+          "shadow": "12px 12px 50px rgba(0, 0, 0, 0.4)"
+        },
+        {
+          "slug": "sharp",
+          "shadow": "6px 6px 0px rgba(0, 0, 0, 0.2)"
+        },
+        {
+          "slug": "outlined",
+          "shadow": "6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1)"
+        },
+        {
+          "slug": "crisp",
+          "shadow": "6px 6px 0px rgba(0, 0, 0, 1)"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--background)",
+      "text": "var(--wp--preset--color--foreground)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--system-font)",
+      "fontSize": "var(--wp--preset--font-size--medium)",
+      "fontWeight": "var(--wp--preset--font-weight--normal)",
+      "lineHeight": "var(--wp--preset--line-height--normal)"
+    },
+    "spacing": {
+      "blockGap": "var(--wp--preset--spacing--40)"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--primary)"
+        },
+        ":hover": {
+          "color": {
+            "text": "var(--wp--preset--color--accent)"
+          }
+        }
+      },
+      "h1": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--inter)",
+          "fontSize": "var(--wp--preset--font-size--xxx-large)",
+          "fontWeight": "var(--wp--preset--font-weight--bold)",
+          "lineHeight": "var(--wp--preset--line-height--tight)"
+        },
+        "spacing": {
+          "margin": {
+            "bottom": "var(--wp--preset--spacing--60)"
+          }
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--inter)",
+          "fontSize": "var(--wp--preset--font-size--xx-large)",
+          "fontWeight": "var(--wp--preset--font-weight--semibold)",
+          "lineHeight": "var(--wp--preset--line-height--tight)"
+        },
+        "spacing": {
+          "margin": {
+            "bottom": "var(--wp--preset--spacing--50)"
+          }
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--inter)",
+          "fontSize": "var(--wp--preset--font-size--x-large)",
+          "fontWeight": "var(--wp--preset--font-weight--semibold)",
+          "lineHeight": "var(--wp--preset--line-height--tight)"
+        },
+        "spacing": {
+          "margin": {
+            "bottom": "var(--wp--preset--spacing--40)"
+          }
+        }
+      },
+      "h4": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--inter)",
+          "fontSize": "var(--wp--preset--font-size--large)",
+          "fontWeight": "var(--wp--preset--font-weight--medium)",
+          "lineHeight": "var(--wp--preset--line-height--tight)"
+        },
+        "spacing": {
+          "margin": {
+            "bottom": "var(--wp--preset--spacing--40)"
+          }
+        }
+      },
+      "h5": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--inter)",
+          "fontSize": "var(--wp--preset--font-size--medium)",
+          "fontWeight": "var(--wp--preset--font-weight--medium)",
+          "lineHeight": "var(--wp--preset--line-height--tight)"
+        },
+        "spacing": {
+          "margin": {
+            "bottom": "var(--wp--preset--spacing--30)"
+          }
+        }
+      },
+      "h6": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--inter)",
+          "fontSize": "var(--wp--preset--font-size--small)",
+          "fontWeight": "var(--wp--preset--font-weight--medium)",
+          "lineHeight": "var(--wp--preset--line-height--tight)"
+        },
+        "spacing": {
+          "margin": {
+            "bottom": "var(--wp--preset--spacing--30)"
+          }
+        }
+      }
+    },
+    "blocks": {
+      "core/button": {
+        "border": {
+          "radius": "var(--wp--preset--border-radius--medium)"
+        },
+        "typography": {
+          "fontWeight": "var(--wp--preset--font-weight--medium)"
+        },
+        "spacing": {
+          "padding": {
+            "top": "var(--wp--preset--spacing--20)",
+            "bottom": "var(--wp--preset--spacing--20)",
+            "left": "var(--wp--preset--spacing--40)",
+            "right": "var(--wp--preset--spacing--40)"
+          }
+        }
+      },
+      "core/group": {
+        "spacing": {
+          "blockGap": "var(--wp--preset--spacing--40)"
+        }
+      },
+      "core/columns": {
+        "spacing": {
+          "blockGap": "var(--wp--preset--spacing--40)"
+        }
+      },
+      "core/cover": {
+        "spacing": {
+          "blockGap": "var(--wp--preset--spacing--40)"
+        }
+      },
+      "core/heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--inter)"
+        }
+      },
+      "core/paragraph": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--system-font)",
+          "lineHeight": "var(--wp--preset--line-height--normal)"
+        }
+      },
+      "core/list": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--system-font)"
+        }
+      },
+      "core/quote": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--inter)"
+        }
+      },
+      "core/pullquote": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--inter)"
+        }
+      },
+      "core/table": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--system-font)"
+        }
+      },
+      "core/code": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--monospace)"
+        }
+      },
+      "core/preformatted": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--monospace)"
+        }
+      }
+    }
+  },
+  "templateParts": [
+    {
+      "name": "header",
+      "title": "Header",
+      "area": "header"
+    },
+    {
+      "name": "footer",
+      "title": "Footer",
+      "area": "footer"
+    }
+  ]
+}

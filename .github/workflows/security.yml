@@ -1,0 +1,85 @@
+name: Security Scan
+
+on:
+  schedule:
+    - cron: '0 2 * * 1' # Weekly on Monday at 2 AM
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        scan-type: 'fs'
+        scan-ref: '.'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+        
+    - name: Upload Trivy scan results
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: 'trivy-results.sarif'
+        
+    - name: Run CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
+      with:
+        languages: javascript, php
+        
+    - name: Check for secrets
+      uses: trufflesecurity/trufflehog@main
+      with:
+        path: ./
+        base: main
+        head: HEAD
+        extra_args: --debug --only-verified
+        
+    - name: Run PHP security check
+      run: |
+        composer global require enlightn/security-checker
+        ~/.composer/vendor/bin/security-checker security:check composer.lock || true
+        
+    - name: Check for vulnerable dependencies
+      run: |
+        npm audit --audit-level moderate
+        
+    - name: Run WordPress security scan
+      run: |
+        # Install WP-CLI
+        curl -O https://raw.githubusercontent.com/wp-cli/wp-cli/gh-pages/phar/wp-cli.phar
+        chmod +x wp-cli.phar
+        sudo mv wp-cli.phar /usr/local/bin/wp
+        
+        # Check for WordPress vulnerabilities
+        wp core check-update --allow-root || true
+        wp plugin list --status=active --allow-root || true
+        
+    - name: Check file permissions
+      run: |
+        find . -name "*.php" -perm /022 -exec echo "Insecure permissions: {}" \;
+        find . -name "*.sh" -not -perm 755 -exec echo "Script not executable: {}" \;
+        
+    - name: Check for hardcoded secrets
+      run: |
+        grep -r "password\|secret\|key\|token" --include="*.php" --include="*.js" --include="*.json" . | grep -v "example\|placeholder\|your_" || true
+        
+    - name: Security report
+      run: |
+        echo "## Security Scan Results" >> $GITHUB_STEP_SUMMARY
+        echo "- Trivy vulnerability scan completed" >> $GITHUB_STEP_SUMMARY
+        echo "- CodeQL analysis completed" >> $GITHUB_STEP_SUMMARY
+        echo "- Secrets scan completed" >> $GITHUB_STEP_SUMMARY
+        echo "- PHP security check completed" >> $GITHUB_STEP_SUMMARY
+        echo "- NPM audit completed" >> $GITHUB_STEP_SUMMARY
+        echo "- WordPress security scan completed" >> $GITHUB_STEP_SUMMARY
+        echo "- File permissions check completed" >> $GITHUB_STEP_SUMMARY
+        echo "- Hardcoded secrets check completed" >> $GITHUB_STEP_SUMMARY

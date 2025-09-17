@@ -1,0 +1,10 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Run lint-staged to format and check code
+npx lint-staged
+
+# Check for any PHP syntax errors
+if command -v php &> /dev/null; then
+    find . -name "*.php" -not -path "./node_modules/*" -not -path "./vendor/*" -exec php -l {} \; | grep -v "No syntax errors"
+fi

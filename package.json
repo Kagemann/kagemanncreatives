@@ -1,0 +1,41 @@
+{
+  "name": "kagemann-creatives",
+  "version": "1.0.0",
+  "description": "Production-ready WordPress system for Kagemann Creatives",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint:php": "php -l",
+    "doctor": "./tooling/doctor.sh",
+    "new-client": "./tooling/new-client.sh",
+    "sync-docs": "./tooling/sync-docs.sh",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.1"
+  },
+  "lint-staged": {
+    "*.{js,json,md,yml,yaml}": "prettier --write",
+    "*.php": "php -l"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kagemann-creatives/kagemann-creatives.git"
+  },
+  "keywords": [
+    "wordpress",
+    "starter-kit",
+    "web-agency",
+    "block-theme",
+    "smb"
+  ],
+  "author": "Kagemann Creatives",
+  "license": "MIT"
+}
