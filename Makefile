@@ -93,6 +93,49 @@ deploy: ## Deploy to production (placeholder)
 	@echo "⚠️  Configure your deployment pipeline in .github/workflows/"
 	@echo "✅ Deployment complete"
 
+deploy-github: ## Deploy to GitHub repository
+	@echo "🚀 Deploying to GitHub..."
+	@git add .
+	@git commit -m "feat: deploy Kagemann Creatives system" || true
+	@git push origin main
+	@echo "✅ Successfully deployed to GitHub"
+
+deploy-package: ## Create deployment package
+	@echo "📦 Creating deployment package..."
+	@tar -czf kagemann-creatives-$(shell date +%Y%m%d-%H%M%S).tar.gz \
+		--exclude=node_modules \
+		--exclude=.git \
+		--exclude=.github \
+		--exclude=*.log \
+		--exclude=.DS_Store \
+		--exclude=clients \
+		.
+	@echo "✅ Deployment package created"
+
+deploy-bureau: ## Deploy bureau site only
+	@echo "🏢 Creating bureau site package..."
+	@tar -czf bureau-site-$(shell date +%Y%m%d-%H%M%S).tar.gz \
+		--exclude=node_modules \
+		--exclude=.git \
+		--exclude=*.log \
+		--exclude=.DS_Store \
+		bureau-site/
+	@echo "✅ Bureau site package created"
+
+deploy-starter: ## Deploy starter kit only
+	@echo "🔧 Creating starter kit package..."
+	@tar -czf wp-starter-$(shell date +%Y%m%d-%H%M%S).tar.gz \
+		--exclude=node_modules \
+		--exclude=.git \
+		--exclude=*.log \
+		--exclude=.DS_Store \
+		wp-starter/
+	@echo "✅ Starter kit package created"
+
+deploy-interactive: ## Run interactive deployment script
+	@chmod +x deploy.sh
+	@./deploy.sh
+
 # Show variables
 vars: ## Show current variable values
 	@echo "📋 Current Variables:"
