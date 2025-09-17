@@ -1,0 +1,8 @@
+:root{
+  --radius-sm:6px; --radius-md:12px; --radius-lg:20px;
+  --container-max:1200px; --container-pad:clamp(16px,4vw,40px);
+}
+.container{max-width:var(--container-max);padding-inline:var(--container-pad);margin-inline:auto;}
+.visually-hidden{position:absolute!important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap;}
+:focus-visible{outline:2px solid var(--wp--preset--color--accent); outline-offset:3px;}
+
