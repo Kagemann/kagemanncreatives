@@ -1,10 +1,9 @@
 /*
 Theme Name: Kagemann Creatives Bureau
-Description: Official marketing website for Kagemann Creatives. Built on our WordPress starter kit with custom branding and content.
+Description: Official marketing website for Kagemann Creatives. A modern, performance-optimized WordPress theme built for web agencies.
 Version: 1.0.0
 Author: Kagemann Creatives
 Author URI: https://kagemanncreatives.com
-Template: child-theme
 Text Domain: kagemann-bureau
 Domain Path: /languages
 Requires at least: 6.4
@@ -35,8 +34,7 @@ License URI: https://opensource.org/licenses/MIT
  * - Contact and lead generation forms
  */
 
-/* Import parent theme styles */
-@import url('../child-theme/style.css');
+/* Base WordPress styles */
 
 /* Bureau-specific color palette */
 :root {
